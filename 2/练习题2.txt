@@ -1,0 +1,76 @@
+一. 关键字
+1. 列举目前你掌握的关键字。
+public main class void static int float byte short long double boolean 
+--------------
+
+二. 标识符
+1. 类的命名规则是什么？方法和变量的命名规则是什么？常量的命名规则是什么？
+- 英文字母/数字/$/_
+- 以英文字母数字开头
+- 不能使用关键字
+- 不能再{}重复定义变量
+- 类以大写开头,HelloWorld
+- 变量已小写开头，helloWorld
+- 接口全部大写，HELLO_WORLD
+
+2. 下列标识符，哪些合法，哪些不合法？
+122，x2,  _num,  book,  N-1,  3X,  !root,  s*,  -sum,  flag,  wangwu,   &root,  test,   4hello,   -teacher,    _teacher, _Cell,   @xcode,   lisi,   *p。
+合法:x2,book,flag,wangwu,test,lisi
+
+--------------
+
+三. 注释符
+1. 注释符的作用有哪些。
+// 
+/*   */
+
+
+--------------
+
+四. 常量
+1. 把下列常量进行分类：
+123,   'b',    true,    3453,    3.14,    "student",    'p',    45.689,    128,    false,    'r'，  "test",    "well",   't',    5.78,    100,   false,    54.67。
+
+byte:
+short:128,123,100
+int:  3453
+long:
+float:5.78
+double:45.689
+boolean:true,false,false
+'':'b','p','t'
+"":"student","test","well"
+
+--------------
+
+五. 变量
+1. 定义三个int型变量a, b, c，变量a初始化为100,  变量b初始化为20,  利用a和b的和给变量c赋值；
+int a = 100;
+int b = 20;
+int c = a + b;
+定义一个long型变量并初始化为130;
+long a = 130;
+定义一个float变量不初始化,   一个double型变量初始化为3.1415;
+float a;
+double b = 3.1415;
+定义一个char型变量初始化为'h'。
+char a = 'h';
+
+--------------
+
+数据类型转换
+1. 下面几行代码，哪些有问题？请写出问题原因。
+	byte a = 3, b = 12, c;
+	int d = 120, e = 90, f;
+	int j;
+	c = a+b;
+	d = a+f; f没有赋值
+	e = d+e; d没有赋值成功，所以这里相加也是失败
+	j = b; 
+	int e = a+15; 重复定义变量e
+	a = 3+2;
+3. 下面这行代码有问题吗？如果有，原因是什么？	
+	byte x = 131; 
+	byte的取值范围是-127到127，内存溢出
+	
+
