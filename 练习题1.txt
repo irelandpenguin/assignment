@@ -1,0 +1,59 @@
+一. 快捷键练习
+1. 在D盘创建2个文件夹，一个用中文命名，一个用英文命名。然后通过快捷键把2个文件夹拷到C盘里。
+ctrl+c ctrl+v
+2. 在D盘创建一个文本文件，里面输入一些文字信息。练习快捷键 全选，复制，粘贴，剪切，撤销，保存。
+echo hello,world > d:\hello.txt
+----------------------------------------------------
+
+二. 常见DOS命令
+1. 使用DOS命令在D盘创建2个文件夹，然后用删除的DOS命令删除其中一个。然后，使用DOS命令进入剩下的这个文件夹里，使用DOS命令创建3个文本文件，再用DOS命令删除后辍为.txt的所有文件。
+md dir1
+md dir2
+rd dir1
+cd dir2
+type nul > file1.txt
+type nul > file2.txt
+type nul > file3.txt
+del *.txt
+2. 常见的DOS命令，自己多练习几遍。(注意：练习时，不要在C盘练习！建议在D盘或E盘下)
+
+----------------------------------------------------
+
+三. java语言
+1. java语言的特点有哪些？请列举出来。
+简单性 面向对象 分布式处理 健壮性 结构中立 开源 跨平台
+2. 说下你对jvm的理解?
+java virtual machine
+3. 什么是jdk，什么是jre，什么是jvm，它们三者有什么关系。
+java develop kit , java runtime enviroment, java virtual machine
+4. java语言是跨平台的吗?JVM是跨平台的吗?
+是的可以在windows,macos,unix编写，可以在以上3个系统运行 
+----------------------------------------------------
+
+四. JDK下载,安装
+1. 在你的电脑上独自安装jdk版本7u80，并校验安装是否成功。
+java -version 运行
+javac -version 编译
+----------------------------------------------------
+
+五. 第一个java程序
+1. 独立编写Hello World程序。
+class HelloWorld{
+	public static void main(String[] args){
+		system.out.println("hello,world");
+	}
+}
+2. class的作用是什么？main函数的作用是什么？输出语句的作用是什么？
+class是一个类，main是一个函数名，输出是打印打印字符串
+----------------------------------------------------
+
+六. 常见问题
+1. 配置你的电脑，正常显示文件后辍。
+windows10 资源管理器标题栏上查看菜单里面点击文件拓展名
+----------------------------------------------------
+
+七. notepad++安装
+1. 独立安装notepad++软件。
+2. 使用notepad++软件独自写出一个hello world的java程序。
+
+
