@@ -40,7 +40,7 @@ javac -version 编译
 1. 独立编写Hello World程序。
 class HelloWorld{
 	public static void main(String[] args){
-		system.out.println("hello,world");
+		System.out.println("hello,world");
 	}
 }
 2. class的作用是什么？main函数的作用是什么？输出语句的作用是什么？
