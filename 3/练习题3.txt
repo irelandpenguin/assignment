@@ -1,0 +1,65 @@
+一. 运算符
+1. 除法和取余的区别? 使用notepad++写代码举例说明。
+
+----------------------------------------------------
+
+++，--运算符
+1. 在notepad++中写出下面的值。
+	int x = 2, y = 3;
+	int m, n;
+	m = x++; //m=2
+	n = ++x;// n=4
+	m = --y; //m=2
+	n = y--;//n=2
+最终x=4,y=1
+
+
+	int a = 3, b = 4, c;
+	c = a--;//c=3
+	c = a++;//c=2
+	c = b++;//c=4
+	c = ++a;//c=4
+	c = --b;//c=4
+	c = ++b;//c=5
+	最终a=4,b=5;
+
+
+----------------------------------------------------
+
+赋值运算符
+1. 下面的代码有没有问题？如果有，说明问题原因，以及解决方案。
+	short x = 10; 
+	x = x + 10; 因为x的数据类型是short,x+10是int数据类型，报错
+  	short y = 1; 
+	y += 1;对，赋值运算符有强制转换
+	
+----------------------------------------------------
+
+比较运算符
+没作业
+----------------------------------------------------
+
+逻辑运算符
+1. 判断下列表达式的值：
+  	int x =3,y= 4;
+	boolean exist = false;
+	boolean flag1 = (x>5) && (x*y)>10; // false
+	boolean flag2 = (y<= 4) || (x+y) >= 10; // ture
+	boolean flag3 = !exist && (y/3)>=2; // false
+	boolean flag4 = (x-y)>=0||(x+y)<10&&exist; // false
+  
+----------------------------------------------------
+
+三目运算符
+1. 在notepad++上写代码，求出2个int型变量的最小值并打印。
+import java.util.Scanner
+class Test{
+	public static void main(Strings[] args){
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		Scanner sc =  new Scanner(System.in);
+		int b = sc.nextInt();
+		int c = (a>b?a:b);
+		System.out.println(c);
+	}
+}
