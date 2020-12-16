@@ -1,0 +1,61 @@
+JAVA语言程序设计
+
+if条件语句
+1. 有两个整型变量x=10, y=13。利用if条件语句判断这两个整型变量的大小，打印输出较大的那个变量值。
+class Test{
+	public static void main(String[] args){
+		int x = 10;
+		int y = 13;
+		if (x>y){
+			System.out.println(x);
+		}else{
+			System.out.println(y);
+		}
+	}
+}
+2. 有一个整型变量p，任意给它一个初值。利用if条件语句判断变量p是奇数还是偶数。
+import java.util.Scanner
+class Test{
+	public static void main(String[] args){
+		Scanner sc  = new Scanner(System.in);
+		int a = sc.nextInt();
+		if (a % 2==0){
+			system.out.println("这是偶数");
+		}else{
+			System.out.println("这是奇数");
+		}
+	}
+}
+3. 看程序写结果：请自己独立分析，先不要编译运行。
+int x = 1,y = 1;
+if(x++==2 && ++y==2) {
+	x =7;
+}
+System.out.println("x="+x+",y="+y);
+//x=2,y=2
+----------------------------------------------------
+
+if嵌套语句
+1. 求三个整型变量中的最大值，并打印出来。 
+import java.util.Scanner
+class Teest{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		if (a>b){
+			if (a>c){
+				System.out.println(a);
+			}else{
+				System.out.println(c);
+			}
+		}else{
+			if (b>c){
+				System.out.println(b);
+			}else{
+				System.out.println(c);
+			}
+		}
+	}
+}
