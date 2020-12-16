@@ -20,7 +20,7 @@ class Test{
 		Scanner sc  = new Scanner(System.in);
 		int a = sc.nextInt();
 		if (a % 2==0){
-			system.out.println("这是偶数");
+			System.out.println("这是偶数");
 		}else{
 			System.out.println("这是奇数");
 		}
