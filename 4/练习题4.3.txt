@@ -22,11 +22,11 @@ class Test{
 		while (a <= 200){
 			if (a/10%13==0){
 				System.out.print(a+" ");
+				if (counter_%5==0){
+					System.out.println();
+				}
+				counter_++;
 			} 
-			if (counter_%5==0){
-				System.out.println();
-			}
-			counter_++;
 			a++;
 		}
 	}
@@ -75,7 +75,9 @@ class Test{
 			if (zhouchang>20){
 				System.out.println("r:"+r);
 				system.out.println("÷‹≥§:"+zhouchang);
+				break£ª
 			}
+			r++;
 		}
 	}
 }
