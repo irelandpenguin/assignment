@@ -1,12 +1,5 @@
-JAVA语言程序设计
-
-switch分支语句
-1. 键盘录入一个整数（1到12之间），利用switch语句判断并打印其对应的月份(一月份～十二月份)。
-
-2.一年12个月，3月，4月，5月为春季; 6月，7月，8月为夏季; 9月，10月，11月为秋季; 12月，1月，2月为冬季。
-键盘录入一个整数(1到12之间)，利用switch语句判断当前属于哪个季度。
-import java.util.Scanner
-class Test{
+import java.util.Scanner;
+class Season{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		int month_ = sc.nextInt();
@@ -19,11 +12,11 @@ class Test{
 			case 3:
 			case 4:
 			case 5:
-				System.out.println("spring");
+				System.out.println("sping");
 				break;
 			case 6:
 			case 7:
-			case 8：
+			case 8:
 				System.out.println("summer");
 				break;
 			case 9:
@@ -31,7 +24,8 @@ class Test{
 			case 11:
 				System.out.println("autumn");
 				break;
-				  p
+			default:
+				System.out.println("not in range");
 		}
 	}
 }
