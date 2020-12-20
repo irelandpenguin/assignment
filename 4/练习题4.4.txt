@@ -1,0 +1,84 @@
+JAVA语言程序设计
+
+do...while循环语句
+1. 求1到100所有能被3整除又能被2整除的数的总和。 
+class DoWhileTest{
+	public static void main(String[] args){
+		int a = 1;
+		int sum_=0;
+		do{
+			if (a%3==0&&a%2==0){
+				sum_+=a;
+			}
+			a++;
+		} while(a<=100);
+		System.out.println(sum_);
+	}
+}
+2. 求100－200十位数包含3的数，一行打印5个数。
+class DoWhileTest2{
+	public static void main(String[] args){
+		int a =100;
+		do {
+			System.out.print(a+"\t");
+			if (a%5==0){
+				System.out.println();
+			}
+			a++;
+		} while (a<=200);
+	}
+}
+3. 求100到600之间的“水仙花数”。所谓的水仙花数是指一个三位数，其各位数字的立方和等于该数本身。
+比如：153就是一个水仙花数，即：153 = 1*1*1 + 5*5*5 + 3*3*3
+class DoWhileTest3{
+	public static void main(String[] args){
+		int a = 100;
+		int res_;
+		int ge ;
+		int shi;
+		int bai;
+		do {
+			ge = a%10;
+			shi = a/10%10;
+			bai = a/100;
+			res_=ge*ge*ge+shi*shi*shi+bai*bai*bai;
+			if (res_==a){
+				System.out.println(res_);
+			}
+			a++;
+		} while (a<=600);
+	}
+}
+
+
+----------------------------------------------------
+
+do...while语句与continue, break的使用
+1.  打印输出50-100以内能被3整除的数字，要求：使用while和continue语句实现。
+class DoWhileTest4{
+	public static void main(String[] args){
+		int a = 50;
+		do{
+			if(a%3!=0){
+				continue;
+			}
+			System.out.println(a);
+		} while(a<=100);	
+	}
+}
+2. 求半径为1到15且圆周长(周长＝2*PI*r;)大于20时，对应的临界半径和临界周长的大小。
+class DoWhileTest5{
+	public static void main(String[] args){
+		int r = 1;
+		double pi = 3.14;
+		double zhouChang ;
+		do {
+			zhouChang = 2*pi*r;
+			if(zhouChang>20){
+				System.out.println("对应的临界半径"+r+ss",临界周长"+zhouChang);
+				break;
+			}
+			r++;
+		} while(r<=15);
+	}
+}

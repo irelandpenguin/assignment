@@ -1,0 +1,107 @@
+一维数组
+1. 一维数组{34, 12, 56, 43, 68, 699}; 编写程序找出数组中最大值与最小值。
+class Test{
+	public static int max_(int[] arr){
+		int temp= arr[0];
+		for(int i = 0;i < arr.length;i++){
+			if (temp<arr[i]){
+				temp = arr[i];
+			}
+		}
+		return temp;
+	}
+	
+	public static int min_(int[] arr){
+		int temp = arr[0];
+		for (int i = 0; i<arr.length;i++){
+			if (temp>arr[i]){
+				temp=arr[i];
+			}
+		}
+		return temp;
+	}
+	
+	public static void main(String[] args){
+		int[] a = {34, 12, 56, 43, 68, 699};
+		int max_=max_(a);
+		int min_= min_(a);
+		System.out.println("max value:"+max_+",min value:"+min_);
+	}
+}
+2. 编写程序，将一维整型数组{12, 34, 21, 45, 56, 33, 11, 23, 47,89}中的元素按颠倒的顺序重新存放
+(比如：第一个与最后一个交换，第二个与倒数第二个交换，以此类推)。
+class Test2{
+	public static void exchange_(int[] arr){
+		int[] result_= new int[arr.length];
+		for(int a = 0;a < arr.length/2;a++){
+			int temp=arr[a];
+			arr[a] = arr[arr.length-1-a];
+			arr[arr.length-1-a]=temp;
+		}
+		for (int a = 0; a< arr.length;a++){
+			System.out.print(arr[a]+"\t");
+		}
+		
+	}
+	
+	public static void main(String[] args){
+		int[] arr={12, 34, 21, 45, 56, 33, 11, 23, 47,89};
+		exchange_(arr);
+	}
+}
+----------------------------------------------------
+
+二维数组
+
+1. 求3个学生(小明：语，数，外成绩为78, 89, 76,；小红：语，数，外成绩为89, 77, 99,；小李：语，数，外成绩为78, 66, 90)的语文，数学，外语平均成绩。
+class Test3{
+	public static void average_(int[][] arr,int[] arr2){
+		for(int a = 0;a<arr.length;a++){
+			int sum_=0;
+			for (int b = 0;b<arr[a].length;b++){
+				sum_+=arr[b][a];
+			}
+			arr2[a]=sum_/arr.length;
+		}
+	}
+	
+	public static void print_(int[] arr){
+		for (int a = 0;a<arr.length;a++){
+			System.out.println(arr[a]);
+		}
+	}
+	
+	public static void main(String[] args){
+		int[][] arr={{78,89,76},{78,66,90},{89,77,99}};
+		int[] average_=new int[3];
+		average_(arr,average_);
+		for(int a =0;a<average_.length;a++){
+			System.out.print(average_[a]+"\t");
+		}
+	}
+}
+----------------------------------------------------
+
+
+
+方法中的参数传递
+1. 编写一个方法，将一维整型数组{12, 34, 21, 45, 56, 33, 11, 23, 47,89}做为参数传递; 
+该方法的功能是把数组中的元素按颠倒的顺序重新存放。(比如：第一个与最后一个交换，第二个与倒数第二个交换，以此类推)。
+
+class Test4{
+	public static void reverse_(int[] arr){
+		for (int a=0;a<arr.length/2;a++){
+			int temp=arr[a];
+			arr[a]=arr[arr.length-1-a];
+			arr[arr.length-1-a]=temp;
+		}
+		for (int a=0;a<arr.length;a++){
+			System.out.print(arr[a]+"\t");
+		}
+	}
+	
+	public static void main(String[] args){
+		int[] arr={12, 34, 21, 45, 56, 33, 11, 23, 47,89};
+		reverse_(arr);
+	}
+}
