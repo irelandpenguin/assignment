@@ -1,0 +1,362 @@
+面向对象
+
+类的定义与使用
+1. 定义一个电脑类Computer，成员变量如下：
+String name; 
+double price;
+int weight;
+成员方法如下：
+public void show();//显示电脑信息(名称，价格，重量)
+仿照课程案例，创建一个测试类，在测试类的main方法里创建电脑对象，给成员变量赋值，调用show()方法打印电脑信息。
+
+class Computer{
+	String name;
+	double price;
+	int weight;
+	public void show(){
+		System.out.println(this.name+this.price+this.weight);
+	}
+	public Computer(){}
+	public Computer(String name,double price,int weight){
+		this.name=name;
+		this.price=price;
+		this.weight=weight;
+	}
+}
+
+class ComputerDemo{
+	public static void main(String[] args){
+		Computer pc=new Computer("irelandpenguin",100.00,100);
+		pc.show();
+	}
+}
+----------------------------------------
+
+类的get与set方法
+1. 定义一个汽车类Car，成员变量如下：
+String name; 
+String logo;
+double price;
+double weight;
+成员方法如下：
+1)所有成员变量的get方法和set方法;
+2)public void setCarInfo(String ne,String lg,double pi,double we);
+3)public void showCar();//显示汽车信息(名称，品牌，价格，重量)
+仿照课程案例，创建一个测试类，在测试类的main方法里创建汽车对象，
+1). 直接给成员变量赋值，调用get方法打印汽车所有信息;
+2). 调用set方法设置汽车所有成员变量值，然后调用showCar()方法打印汽车信息;
+3). 调用setCarInfo()方法设置汽车成员变量值，然后调用showCar()方法打印汽车信息;
+
+class Car{
+	String name;
+	String logo;
+	double price;
+	double weight;
+	
+	public String getName(){
+		return this.name;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public String getLogo(){
+		return this.logo;
+	}
+	public void setLogo(String logo){
+		this.logo=logo;
+	}
+	
+	public double getPrice(){
+		return this.price;
+	}
+	public void setPrice(double price){
+		this.price=price;
+	}
+	
+	public double getWeight(){
+		return this.weight;
+	}
+	public void setWeight(double weight){
+		this.weight=weight;
+	}
+	
+	public void setCarInfo(String ne,String lg,double pi,double we){
+		name=ne;
+		logo=lg;
+		price=pi;
+		weight=we;
+	}
+	
+	public void showCar(){
+		System.out.println(this.name+this.logo+this.price+this.weight);
+	}
+}
+
+
+class CarDemo{
+	public static void main(String[] args){
+		Car ca=new Car();
+		ca.name="irelandpenguin";
+		ca.logo="lexus";
+		ca.price=1000000.00;
+		ca.weight=100000;
+		ca.getName();
+		ca.getLogo();
+		ca.getWeight();
+		ca.getPrice();
+		
+		ca.setName("irelandpenguin");
+		ca.setLogo("lexus");
+		ca.setPrice(100000.00);
+		ca.setWeight(100000);
+		ca.showCar();
+		
+		ca.setCarInfo("irelandpenguin","lexus",10000.00,100000);
+		ca.showCar();				
+	}
+}
+----------------------------------------
+private关键字
+1.  定义一个手机类Telphone成员变量如下：
+private String name; 
+private String logo;
+private double price;
+private boolean isChina;//是否国产
+成员方法如下：
+1)所有成员变量的get方法和set方法;
+2)public void setTelphoneInfo(String ne,String logo,double price,boolean ic);
+3)public void showTelphone();//显示手机信息(名称，品牌，价格，是否国产)
+仿照课程案例，创建一个测试类，在测试类的main方法里创建手机对象，
+1)调用set方法设置手机所有成员变量值，然后调用get方法打印所有手机成员变量信息;
+2)调用setTelphoneInfo()方法设置手机成员变量值，然后调用showTelphone()方法打印手机信息;
+
+
+
+class Telphone{
+	private String name;
+	private String logo;
+	private double price;
+	private boolean isChina;
+	public String getName(){
+		return this.name;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public String getLogo(){
+		return this.logo;
+	}
+	public void setLogo(String logo){
+		this.logo=logo;
+	}
+	
+	public double getPrice(){
+		return this.price;
+	}
+	public void setPrice(double price){
+		this.price=price;
+	}
+	
+	public boolean getIsChina(){
+		return this.isChina;
+	}
+	public void setIsChina(boolean isChina){
+		this.isChina=isChina;
+	}
+	
+	public void setTelphoneInfo(String ne,String logo,double price,boolean ic){
+		name=ne;
+		this.logo=logo;
+		this.price=price;
+		isChina=ic;
+	}
+	public void showTelphone(){
+		System.out.println(this.name+this.logo+this.price+this.isChina);
+	}
+}
+
+class TelphoneDemo{
+	public static void main(String[] args){
+		Telphone tp=new Telphone();
+		tp.setName("irelandpenguin");
+		tp.setIsChina(true);
+		tp.setLogo("Nokia");
+		tp.setPrice(1000);
+		tp.getName();
+		tp.getIsChina();
+		tp.getLogo();
+		tp.getPrice();
+		
+		tp.setTelphoneInfo("irelandpenguin","google",1000000.00,false);
+		tp.showTelphone();
+	}
+}
+----------------------------------------
+this关键字
+1. 定义一个工人类Worker，成员变量如下：
+private String name;
+private int age;
+private char sex;
+private int number;//工号
+成员方法如下：
+1)所有成员变量的get方法和set方法;
+2)public void setWorkerInfo(String name,int age,char sex,int number);
+3)public void showWorker();//显示工人信息(姓名，年龄，性别，工号)
+仿照课程案例，创建一个测试类，在测试类的main方法里创建工人对象，
+1)调用set方法设置工人所有成员变量值，然后调用get方法打印所有工人成员变量信息;
+2)调用setWorkerInfo()方法设置工人成员变量值，然后调用showWorker()方法打印工人信息;
+
+----------------------------------------
+构造方法
+1. 给上面的工人类Worker添加无参构造和带参构造。
+仿照课程案例，创建一个测试类，在测试类的main方法里：
+1)使用无参构造创建工人对象，然后调用set方法设置工人所有信息，调用get方法打印工人所有信息;
+2)使用带参构造创建工人对象，然后调用get方法打印工人所有信息;
+class Worker{
+	private String name;
+	private int age;
+	private char sex;
+	private int number;
+	public String getName(){
+		return this.name;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public int getAge(){
+		return this.age;
+	}
+	public void setAge(int age){
+		this.age=age;
+	}
+	
+	public char getSex(){
+		return this.sex;
+	}
+	public void setSex(char sex){
+		this.sex=sex;
+	}
+	
+	public int getNumber(){
+		return this.number;
+	}
+	public void setNumber(int number){
+		this.number=number;
+	}
+	
+	public void setWorkerInfo(String name,int age,char sex,int number){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		this.number=number;
+	}
+	public void showWorker(){
+		System.out.println(this.name+this.age+this.sex+this.number);
+	}
+	//构造方法
+	public Worker(){}
+	public Worker(String name,int age,char sex,int number){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		this.number=number;
+	}
+}
+
+class WorkerDemo{
+	public static void main(String[] args){
+		Worker wk=new Worker();
+		wk.setName("irelandpenguin");
+		wk.setAge(22);
+		wk.setSex('M');
+		wk.setNumber(1234);
+		wk.getName();
+		wk.getAge();
+		wk.getSex();
+		wk.getNumber();
+		wk.setWorkerInfo("irelandpenguin",25,'M',1234);
+		wk.showWorker();
+		
+		//无参构造
+		Worker wk2 = new Worker();
+		wk2.setName("irelandpenguin2");
+		wk2.setAge(22);
+		wk2.setSex('M');
+		wk2.setNumber(1234);
+		wk2.getName();
+		wk2.getAge();
+		wk2.getSex();
+		wk2.getNumber();
+		
+		//有参构造
+		Worker wk3 = new Worker("irelandspider3",25,'M',12345);
+		wk3.getName();
+		wk3.getAge();
+		wk3.getSex();
+		wk3.getNumber();
+	}
+}
+----------------------------------------
+
+成员方法与构造方法的区别
+1. 描述下什么时候定义成员变量，什么时候定义局部变量。
+成员变量能够描述一个对象，局部使用在方法的参数和方法内部定义中；
+----------------------------------------
+
+
+static修饰成员变量
+1. 仿照课程案例，在notepad++上编写代码。
+class TestDemo{
+	static String name;
+	static int age;
+	static char sex;
+	static int number;
+}
+----------------------------------------
+
+static修饰成员方法
+1. 仿照课程案例，在notepad++上编写代码。 
+class TestDemo2{
+	String name;
+	int age;
+	char sex;
+	int number;
+	public Static showInfo(){
+		System.out.println(this.name+this.age+this.sex+this.number);
+	}
+}
+----------------------------------------
+
+2. 编写一个数组工具类，实现以下功能：
+public static void show(double[] arr);//逆序遍历数组元素
+public static double getMax(double[] arr);//获取数组中的最大值
+
+class Tools{
+	double[] arr;
+	public static void show(double[] arr){
+		for (int a=arr.length-1;a>0;a--){
+			System.out.println(arr[a]);
+		}
+	}
+	public static double getMax(double[] arr){
+		double max_=arr[1];
+		for (int a=1;a<arr.length-1;a++){
+			if (max_<arr[a]){
+				max_=arr[a];
+			}
+		}
+		return max_;
+	}
+}
+
+class ToolsDemo{
+	public static void main(String[] args){
+		double[] arr = {12.23,14.24,123.00,0.55};
+		Tools tl = new Tools();
+		tl.show(arr);
+		System.out.println(tl.getMax(arr));
+	}
+}
