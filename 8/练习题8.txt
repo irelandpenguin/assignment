@@ -1,0 +1,125 @@
+面向对象 - 封装
+
+说明书的制作细节
+1. 编写一个数组工具类ArrayTool，实现以下功能：
+public static void show(double[] arr);//逆序遍历数组元素
+public static int getMax(double[] arr);//获取数组中的最大值
+最后仿照课程案例，也创建一个数组测试类，测试上述我们实现的每一个方法。
+2. 对ArrayTool以及ArrayTool里的每一个方法添加文档注释。使用javadoc解析工具生成文档说明书。
+/**mainly it's to reverse an array to print and find the max value of the an array;
+@author irelandpenguin
+@version 1.0
+*/
+public class ArrayTool{
+	/**function:reverse an array to print;
+	@param arr 一维数组;
+	*/
+	public static void show(double[] arr){
+		for (int a = 1;a<arr.length/2;a++){
+			double temp = arr[a];
+			arr[a]=arr[arr.length-1-a];
+			arr[arr.length-1-a]=arr[a];
+		}
+		for (int a = 1;a<arr.length;a++){
+			System.out.println(a+":"+arr[a]);
+		}
+	}
+	/**function:find the max value of an array;
+	@param arr 一维数组;
+	*/
+	public static int getMax(double[] arr){
+		int max_ = (int) arr[0];
+		for (int a = 0;a<arr.length-1;a++){
+			if (max_<arr[a]){
+				max_= (int) arr[a];
+			}
+		}
+		return max_;
+	}
+	/**这是构造方法
+	*/
+	public ArrayTool(){}
+}
+
+class ArrayToolDemo{
+	public static void main(String[] args){
+		double[] arr = {12.00,12.24,99.91,0.24,99.91};
+		ArrayTool at = new ArrayTool();
+		at.show(arr);
+
+		
+		int max_ = at.getMax(arr);
+		System.out.println("最大值"+max_);
+	}
+}
+-----------------------------------------------------------------------
+
+说明书的使用
+1. 仿照课程，写一个测试类，根据你生成的说明书，对每一个方法进行测试。
+/**mainly it's to pretify an array
+@author irelandpenguin
+@version 1.0
+*/
+public class PrettyPrintln{
+	/**to print an value of an array at one line;
+	@param arr 一维数组;
+	*/
+	public static void println(double[] arr){
+		for (int a = 1; a < arr.length; a++){
+			System.out.println(arr[a]);
+		}
+	}
+	/** same as println funciton but reversely;
+	@param arr 一维数组;
+	*/
+	public static void reversePrintln(double[] arr){
+		for (int a = arr.length-1; a >= 0; a--){
+			System.out.println(arr[a]);
+		}
+	}
+	//构造参数
+	/**这是一个构造参数
+	*/
+	public PrettyPrintln(){}
+}
+
+class PrettyPrintlnDemo{
+	double[] arr = {12.12,0.24,23.12,22.29,0.24};
+	PrettyPrintln pp = new PrettyPrintln();
+	pp.println(arr);
+	// System.out.println("-----------");
+	pp.reversePrintln(arr);
+}
+-----------------------------------------------------------------------
+
+如何使用帮助文档
+1. 仿照课程，使用Math类里的方法，求2个浮点数的最小值;
+2. 仿照课程，使用Math类里随机方法，动态生成一个由4位数字组成的验证码;
+class Tools{
+	public static double getMin(double val,double val2){
+		double min_ = math.min(val,val2);
+		return min_;
+	}
+	public static String randomNumber(){
+		String number = "";
+		for (int a = 0; a < 4; a++){
+			char char_ = (char) (int) math.random(0,10);
+			number+=char_;
+		}
+		return number;
+	}
+}
+
+class ToolsDemo{
+	Tools ts = new Tools();
+	double min = ts.getMin(10,100);
+	System.out.println(min);
+	
+	String number = ts.randomNumber();
+	System.out.println(number);
+}
+-----------------------------------------------------------------------
+
+代码块概述与使用
+1. 仿照课程，编写代码，举例说明静态代码块，构造代码块，构造方法的执行流程。
+- 在一个程序里面，静态代码块先执行，在执行构造代码块，然后在执行构造方法，静态代码块在一个类里只执行一次，主要用来初始化类成员变量和方法；新创建一个对象，构造代码块执行一次，主要用来简化重复代码；
