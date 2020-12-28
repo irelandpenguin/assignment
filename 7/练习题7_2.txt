@@ -472,36 +472,34 @@ class Tools{
 		}
 		return min_;
 	}
-	// public double getIndex(double[] arr,double value){
-		// for (int a = 0;a<arr.length;a++){
-			// if (arr[a]==value){
-				// return a;
-			// }else{
-				// return -1;
-			// }
-		// }
-	// }
-	// public static double getLastIndex(double[] arr,double value){
-		// double[] temp=new double[arr.length];
-		// double max_ = temp[0];
-		// for (int a = 0;a<arr.length;a++){
-			// if (arr[a]==value){
-				// temp[a]=a;
-			// }
-		// }
-		// for (int a = 0;a<temp.length;a++){
-			// if (a!=0){
-				// for (int b = 0;b<temp.length;b++){
-					// if (max_<temp[b]){
-						// max_=temp[b];
-						// return temp[b];
-					// }
-				// }
-			// }else{
-				// return -1;
-			// }
-		// }
-	// }
+	public int getIndex(double[] arr,double value){
+		for (int a = 0;a<arr.length;a++){
+			if (arr[a]==value){
+				return a;
+			}
+		}
+		return -1;
+	}
+	public static int getLastIndex(double[] arr,double value){
+		int[] temp=new int[arr.length];
+		int max_ = temp[0];
+		for (int a = 0;a<arr.length;a++){
+			if (arr[a]==value){
+				temp[a]=a;
+			}
+		}
+		for (int a = 0;a<temp.length;a++){
+			if (a!=0){
+				for (int b = 0;b<temp.length;b++){
+					if (max_<temp[b]){
+						max_=temp[b];
+						return temp[b];
+					}
+				}
+			}
+		}
+		return -1;
+	}
 	public static void reverse(double[] arr){
 		for (int a = 0;a<arr.length/2;a++){
 			double temp=arr[a];
@@ -519,9 +517,9 @@ class ToolsDemo{
 		tl.show(arr);
 		double max_=tl.getMax(arr);
 		double min_=tl.getMin(arr);
-		// double index_=tl.getIndex(arr,24.00);
-		// double lastIndex_=tl.getLastIndex(arr,24.00);
-		// System.out.println(max_+" "+min_+" "+index_+" "+lastIndex_);
+		int index_=tl.getIndex(arr,24.00);
+		int lastIndex_=tl.getLastIndex(arr,24.00);
+		System.out.println(max_+" "+min_+" "+index_+" "+lastIndex_);
 		tl.reverse(arr);
 		for (int a = 1;a<arr.length;a++){
 			System.out.println(arr[a]);
