@@ -60,7 +60,7 @@ class ArrayToolDemo{
 @author irelandpenguin
 @version 1.0
 */
-public class PrettyPrintln{
+class PrettyPrintln{
 	/**to print an value of an array at one line;
 	@param arr Ò»Î¬Êý×é;
 	*/
@@ -84,11 +84,13 @@ public class PrettyPrintln{
 }
 
 class PrettyPrintlnDemo{
-	double[] arr = {12.12,0.24,23.12,22.29,0.24};
-	PrettyPrintln pp = new PrettyPrintln();
-	pp.println(arr);
-	// System.out.println("-----------");
-	pp.reversePrintln(arr);
+	public static void main(String[] args){
+		double[] arr = {12.12,0.24,23.12,22.29,0.24};
+		PrettyPrintln pp = new PrettyPrintln();
+		pp.println(arr);
+		System.out.println("-----------");
+		pp.reversePrintln(arr);		
+	}
 }
 -----------------------------------------------------------------------
 
