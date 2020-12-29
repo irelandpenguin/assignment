@@ -1,0 +1,321 @@
+面向对象 - 继承
+
+继承的概述
+1. 有三个类：工人类Worker，员工类Employee，人类Person。
+仿照课程编写代码，使用继承组装3者之间的关系，并在测试类中测试。
+//人父类
+class Person{
+	//成员变量
+	private String name;
+	private int age;
+	private String address;
+	//成员方法
+	public String getName(){
+		return this.name;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public int getAge(){
+		return this.age;
+	}
+	public void setAge(int age){
+		this.age=age;
+	}
+	
+	public String getAddress(){
+		return this.address;
+	}
+	public void setAddress(String address){
+		this.address=address;
+	}
+	
+	public String showBasicInfo(){
+		return "name:"+this.name+",age:"+this.age+",address:"+address;
+	}
+	public void setBasicInfo(String name,int age,String address){
+		this.name=name;
+		this.age=age;
+		this.address=address;
+	}
+	//静态方法
+	public static void hello(){
+		System.out.println("hello,everyone!");
+	}
+	//构造方法
+	public Person(){}
+	public Person(String name,int age,String address){
+		this.name=name;
+		this.age=age;
+		this.address=address;
+	}
+}
+//学生子类
+class Student extends Person{
+	private int studentNum;
+	//成员方法
+	public void showInfo(){
+		System.out.println(super.showBasicInfo()+",student number:"+studentNum);
+	}
+	//构造方法
+	public Student(){}
+	public Student(String name,int age,String address,int studentNum){
+		super(name,age,address);
+		this.studentNum=studentNum;
+	}
+}
+//老师子类
+class Teacher extends Person{
+	private int teacherNum;
+	//成员方法
+	public void showInfo(){
+		System.out.println(super.showBasicInfo()+",teacher number:"+teacherNum);
+	}
+	//构造方法
+	public Teacher(){}
+	public Teacher(String name,int age,String address,int teacherNum){
+		super(name,age,address);
+		this.teacherNum=teacherNum;
+	}
+}
+
+class TeacherAndStudentDemo{
+	public static void main(String[] args){
+		Teacher teacher = new Teacher("irelandpenguin",25,"china",1234);
+		teacher.showInfo();
+		
+		Student student = new Student("irelandpenguin-student",24,"england",01234);
+		student.showInfo();
+	}
+}
+------------------------------------------------------
+
+继承注意事项
+1. Java语言中，继承的注意事项有哪些？
+private成员方法和变量 是不能调用
+父类的构造方法是不可以集成，只能显性super();或者隐性调用；
+父类的成员变量使用private 修饰，保证安全性，子类可以继承父类的方法，使用父类的方法获取成员变量
+
+------------------------------------------------------
+
+继承中的成员变量访问特点
+1. 详细列出this和super的区别？
+this指的是调用的对象，super指的是子类继承的父类
+------------------------------------------------------
+
+继承中构造方法的关系
+1. 有三个类：手机类Telphone，电脑类Computer，机器类Machine。
+给三个类分别添加无参构造和带参构造，并使用继承组装3者之间的关系，最后在测试类中测试。
+class Machine {
+	//成员变量
+	private String name;
+	private String brand;
+	private int storage;
+	//成员方法
+	public void setName(String name){
+		this.name=name;
+	}
+	public String getName(){
+		return this.name;
+	}
+	
+	public void setBrand(String Brand){
+		this.brand=brand;
+	}
+	public String getBrand(){
+		return this.brand;
+	}
+	
+	public void setStorage(int Storage){
+		this.storage=storage;
+	}
+	public int getStorage(){
+		return this.storage;
+	}
+	
+	public void setInfo(String name,String brand,int storage){
+		this.name=name;
+		this.brand=brand;
+		this.storage=storage;
+	}
+	public String getBasicInfo(){
+		return "name: "+this.name+"brand: "+this.brand+"storage: "+this.storage;
+	}
+	
+	//静态方法
+	public static void hello(){
+		System.out.println("hello");
+	}	
+	//构造方法
+	public Machine(){}
+	public Machine(String name,String brand,int storage){
+		this.name=name;
+		this.brand=brand;
+		this.storage=storage;
+	}	
+}
+
+class Computer extends Machine{
+	private String os;
+	public void setOs(String os){
+		this.os=os;
+	}
+	public void showInfo(){
+		System.out.println(super.getBasicInfo()+"os: "+this.os);
+	}
+	//构造方法
+	public Computer(){}
+	public Computer(String name,String brand,int age,String os){
+		super(name,brand,age);
+		this.os=os;
+	}
+}
+
+class Phone extends Machine{
+	private String os;
+	public void setOs(String os){
+		this.os=os;
+	}
+	public void showInfo(){
+		System.out.println(super.getBasicInfo()+"os: "+this.os);
+	}
+	//构造方法
+	public Phone(){}
+	public Phone(String name,String brand,int storage,String os){
+		super(name,brand,storage);
+		this.os=os;
+	}
+}
+
+class ComputerAndPhoneDemo{
+	public static void main(String[] args){
+		Computer computer = new Computer("irelandpenguin","lenovo",300000,"windows");
+		computer.showInfo();
+		
+		Phone phone = new Phone("irelandpenguin","honor",3000,"android");
+		phone.showInfo();
+	}
+}
+------------------------------------------------------
+
+继承中成员方法的关系
+1. 有三个类：工人类Worker，员工类Employee，人类Person。
+给三个类里的成员变量，添加get方法和set方法，使用继承组装3者之间的关系，并在测试类中测试。
+class Person{
+	private String name;
+	private String address;
+	private int age;
+	private char gender;
+	public void setName(String name){
+		this.name=name;
+	}
+	public String getName(){
+		return this.name;
+	}
+	
+	public void setAddress(String address){
+		this.address=address;
+	}
+	public String getAdress(){
+		return this.address;
+	}
+	
+	public void setAge(int age){
+		this.age=age;
+	}
+	public int getAge(){
+		return this.age;
+	}
+	
+	public void setGender(char gender){
+		this.gender=gender;
+	}
+	public char getGender(){
+		return this.gender;
+	}
+	
+	public String showBasicInfo(){
+		return "name: "+this.name+",address: "+this.address+",age: "+this.age+",gender:"+this.gender;
+	}
+	public void setBasicInfo(String name,String address,int age,char gender){
+		this.name=name;
+		this.age=age;
+		this.address=address;
+		this.gender=gender;
+	}
+	//静态方法
+	public static void hello(){
+		System.out.println("hello");
+	}
+	//构造方法
+	public Person(){}
+	public Person(String name,String address,int age,char gender){
+		this.name=name;
+		this.address=address;
+		this.age=age;
+		this.gender=gender;
+	}
+}
+
+class Worker extends Person{
+	private int workerNum;
+	public void showInfo(){
+		System.out.println(super.showBasicInfo()+"worker number: "+workerNum);
+	}
+	public void setWorkerNum(int workerNum){
+		this.workerNum=workerNum;
+	}
+	public void setInfo(String name,int age,String address,char gender,int workerNum){
+		setName(name);
+		setAge(age);
+		setAddress(address);
+		setGender(gender);
+		setWorkerNum(workerNum);
+	}
+	
+	public Worker(){}
+	public Worker(String name,String address,int age,char gender,int workerNum){
+		super(name,address,age,gender);
+		this.workerNum=workerNum;
+	}
+}
+
+class Employee extends Person{
+	private int employeeNum;
+	public void setEmployeeNum(int employeeNum){
+		this.employeeNum=employeeNum;
+	}
+	public void showInfo(){
+		System.out.println(super.showBasicInfo()+"employee number"+this.employeeNum);
+	}
+	public void setInfo(String name,int age,String address,char gender,int employeeNum){
+		setName(name);
+		setAge(age);
+		setAddress(address);
+		setGender(gender);
+		setEmployeeNum(employeeNum);
+	}
+	
+	public Employee(){}
+	public Employee(String name , String address,int age,char gender,int employeeNum){
+		super(name,address,age,gender);
+		this.employeeNum=employeeNum;
+	}
+}
+
+class WorkerAndEmployeeDemo{
+	public static void main(String[] args){
+		Worker worker = new Worker("irelandpenguin","china",25,'M',1234);
+		worker.showInfo();
+		
+		Employee employee = new Employee("irelandguin","africa",25,'M',9876);
+		employee.showInfo();
+	}
+}
+------------------------------------------------------
+继承中成员方法的重写
+面试题：方法重写(override)和方法重载(overload)的区别？ 
+方法重写是把相同方法名和相同返回值的方法重新重新编写代码块
+方法重载是把相同的方法名和返回值重新放入不同的参数
+

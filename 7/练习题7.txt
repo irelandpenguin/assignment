@@ -101,10 +101,11 @@ class CarDemo{
 		ca.logo="lexus";
 		ca.price=1000000.00;
 		ca.weight=100000;
-		ca.getName();
-		ca.getLogo();
-		ca.getWeight();
-		ca.getPrice();
+		String name=ca.getName();
+		String logo=ca.getLogo();
+		double weight=ca.getWeight();
+		double price=ca.getPrice();
+		System.out.println(name+logo+weight+price);
 		
 		ca.setName("irelandpenguin");
 		ca.setLogo("lexus");
