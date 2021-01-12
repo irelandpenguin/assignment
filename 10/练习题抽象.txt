@@ -1,0 +1,86 @@
+
+抽象类的概述与应用	
+1. 仿照课程，编写代码，举例验证抽象类的特点。
+容易维护
+--------------------------------------------------------------
+抽象类成员的特点
+1. 详细描述下抽象类成员(成员变量，成员方法)的特点。
+
+2. 有2个类，Telphone类，iPhone类。
+其中Telphone类为抽象类，成员如下：
+public String name; public String logo; 
+无参构造和带参构造方法; name和logo的get和set方法; public abstract void showTel();//打印手机名称和品牌
+苹果手机类iPhone成员如下：
+private int price;//手机价格
+private String system;//手机系统
+无参构造和带参构造方法; price和system的get和set方法;
+Telphone类为iPhone的父类，使用继承组装二者之间的关系，并在测试类中使用iPhone的
+无参构造和带参构造来实例化Telphone对象，调用get和set方法设置和打印信息。再调用show方法打印信息。
+abstract class Telephone {
+	public String name;
+	public String logo;
+	public Telephone(){}
+	public Telephone(String name,String logo){
+		this.name=name;
+		this.logo=logo;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public String getName(){
+		return this.name;
+	}
+	public void setLogo(String logo){
+		this.logo=logo;
+	}
+	public String getLogo(){
+		return this.logo;
+	}
+	
+	public abstract void showTel();
+}
+class Iphone extends Telephone{
+	private int price ;
+	private String system;
+	public Iphone(){
+		super();
+	}
+	public Iphone(String name, String logo,int price, String system){
+		super(name,logo);
+		this.price = price;
+		this.system = system;
+
+	}
+	public void setPrice(int price){
+		this.price=price;
+	}
+	public int getPrice(){
+		return this.price;
+	}
+	public void setSystem(String system){
+		this.system=system;
+	}
+	public String getSystem(){
+		return this.system;
+	}
+	public void showTel(){
+		System.out.println(getName()+"---"+getLogo()+"---"+getPrice()+"---"+getSystem());
+	}
+}
+
+class TelephoneAndIphoneDemo{
+	public static void main(String[] args){
+		Iphone ip = new Iphone();
+		ip.getName();
+		ip.getLogo();
+		ip.getPrice();
+		ip.getSystem();
+		ip.showTel();	
+		Iphone ip2 = new Iphone("irelandpenguin","lenovo",1200,"windows");
+		ip2.getName();
+		ip2.getLogo();
+		ip2.getPrice();
+		ip2.getSystem();
+		ip2.showTel();
+	}
+}

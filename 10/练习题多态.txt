@@ -1,0 +1,58 @@
+
+多态的概述与应用
+1. 详细描述下你对多态的理解，实现多态的前提是什么?
+同一个类有多个形态
+-------------------------------------------------
+多态的综合练习
+1.  有三个类，人类Person，学生类Student，演员类Actor。Person类是Student和Actor的父类。
+Person类有以下成员：
+public void work();//打印“人会工作”
+Student学生类有以下成员：
+public void work();//打印 “学生会学习”
+public void  sport();//打印“学生会运动”
+Actor演员类有以下成员：
+public void work();//打印“演员演节目”
+public void movie();//打印“演员拍电影”
+仿照课程，创建Person的多态对象，使用Student和Actor的无参构造实例对象来初始化。调用work()方法打印最终结果。
+然后，使用向下转型，把Person多态对象转型为学生对象和演员对象，调用学生对象和演员对象里的其它成员方法。
+class Person{
+	private String name = "people";
+	public void work(){
+		System.out.println(" people work");
+	}
+	public Person(){}
+}
+
+class Student extends Person{
+	private String name = "students";
+	public void work(){
+		System.out.println("students study");
+	}
+	public void sport(){
+		System.out.println("studnets execercise");
+	}
+	public Student(){}
+}
+class Actor extends Person{
+	private String name = "actors";
+	public void work (){
+		System.out.println("actors act");
+	}
+	public void movie (){
+		System.out.println("actors make movies");
+	}
+	public Actor (){}
+}
+
+class TestDemo{
+	public static void main(String[] args){
+		Person p =new Student();
+		p.work();
+		Person p2 = new Actor();
+		p2.work();
+		Student p3 = (Student)p;
+		p3.sport();
+		Actor p4 = (Actor)p2;
+		p4.movie();
+}
+	}
