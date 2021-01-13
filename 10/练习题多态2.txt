@@ -1,0 +1,137 @@
+
+abstract综合练习
+1.  有3个类，Soldier军人类，Policeman警察类，ArmedPolice武警类。
+其中Soldier类为抽象类，成员如下：
+private String name; private int age; private char sex;
+无参构造和带参构造方法; 所有成员变量的get和set方法; public abstract void showSoldier();//打印姓名，年龄，性别
+警察类Policeman成员如下：
+private int policeNumber;//警员编号
+无参构造和带参构造方法;  policeNumber的get和set方法;
+武警类ArmedPolice成员如下：
+private String gun;//配枪名称
+无参构造和带参构造方法; gun的get和set方法;
+Soldier类为Policeman和ArmedPolice的父类，使用继承组装三者之间的关系，并在测试类中使用Policeman和ArmedPolice的
+无参构造和带参构造来实例化Soldier对象，调用get和set方法设置和打印信息。再调用show方法打印信息。
+
+abstract class Soldier{
+	private String name;
+	private int age;
+	private char sex;
+	
+	public Soldier(){}
+	public Soldier(String name,int age,char sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+	}
+	
+	public void setName(String name){
+		this.name=name;
+	}
+	public String getName(){
+		return this.name;
+	}
+	public void setAge(int age){
+		this.age=age;
+	}
+	public int getAge(){
+		return this.age;
+	}
+	public void setSex(char sex){
+		this.sex=sex;
+	}
+	public char getSex(){
+		return this.sex;
+	}
+	
+	public abstract void showSoldier();
+}
+
+class Policeman extends Soldier{
+	private int policeNumber;
+	
+	public Policeman(){
+		super();
+	}
+	public Policeman(String name,int age,char sex,int policeNumber){
+		super(name,age,sex);
+		this.policeNumber=policeNumber;
+	}
+	
+	public void setPoliceNumber(int policeNumber){
+		this.policeNumber=policeNumber;
+	}
+	public int getPoliceNumber(){
+		return this.policeNumber;
+	}
+	
+	public void showSoldier(){
+		System.out.println(getName()+"---"+getAge()+"---"+getSex());
+	}
+}
+
+
+class ArmedPolice extends Soldier{
+	private String gun;
+	
+	public ArmedPolice(){
+		super();
+	}
+	public ArmedPolice(String name,int age,char sex,String gun){
+		super(name,age,sex);
+		this.gun=gun;
+	}
+	public void setGun(String gun){
+		this.gun=gun;
+	}
+	public String getGun(){
+		return this.gun;
+	}
+	public void showSoldier(){
+		System.out.println(getName()+"---"+getAge()+"---"+getSex());
+	}
+}
+
+class PolicemanAndArmedPolice{
+	public static void main(String[] args){
+		//policeman实例子类 无参构造
+		Soldier sol = new Policeman();
+		sol.setName("irelandpenguin");
+		sol.getName();
+		sol.setAge(25);
+		sol.getAge();
+		sol.setSex('M');
+		sol.getSex();
+		Policeman po = (Policeman) sol;
+		po.setPoliceNumber(20201212);
+		po.getPoliceNumber();
+		po.showSoldier();
+		//policeman实力子类 有参构造
+		Soldier sol2 = new Policeman("irelandpenguin2",25,'M',20201212);
+		sol2.getName();
+		sol2.getAge();
+		sol2.getSex();
+		Policeman po2 = (Policeman) sol2;
+		po2.getPoliceNumber();
+		po2.showSoldier();
+		//ArmedPolice实例子类 无参构造
+		Soldier sol3 = new ArmedPolice();
+		sol3.setName("irelandpenguin3");
+		sol3.getName();
+		sol3.setAge(22);
+		sol3.setSex('M');
+		sol3.getSex();
+		ArmedPolice ap = (ArmedPolice) sol3;
+		ap.setGun("glock");
+		ap.getGun();
+		ap.showSoldier();
+		//ArmedPolice实例子类 有参构造
+		Soldier sol4 = new ArmedPolice("irelandpenguin4",22,'M',"glock");
+		sol4.getName();
+		sol4.getAge();
+		sol4.getSex();
+		ArmedPolice ap2 = (ArmedPolice) sol4;
+		ap2.getGun();
+		ap2.showSoldier();
+	}
+}

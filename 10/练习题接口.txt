@@ -1,0 +1,146 @@
+
+接口的成员特点
+1. 有一个Game游戏接口，包含1个抽象方法如下：
+public abstract void playGame(); 
+有一个王者荣耀类King，该类包含的成员如下：
+private String name; 
+无参构造和带参构造;name的get和set方法; 
+King类是Gamer接口实现接口类。
+仿照课程，编写代码，并在测试类中使用无参构造和带构造创建King对象来初始化Game接口对象，调用playGame()方法打印游戏名称。
+interface Game {
+	public abstract void playGame();
+}
+
+class KingImp extends Object implements Game{
+	private String name;
+	
+	public KingImp(){}
+	public KingImp(String name){
+		this.name=name;
+	}
+	
+	public void setName(String name){
+		this.name=name;
+	}
+	public String getName(){
+		return this.name;
+	}
+	
+	public void playGame(){
+		System.out.println("Game name:"+name);
+	}
+}
+
+class KingDemo{
+	public static void main(String[] args){
+		Game game = new KingImp();
+		game.playGame();
+		
+		Game game2 = new KingImp("pubg");
+		game2.playGame();
+	}
+}
+
+---------------------------
+类与类及接口之间的关系
+1. 有一个Traffic交通工具接口，包含2个抽象方法如下：
+public abstract void getName();//获取交通工具名称
+public abstract String getTimer();//获取交通耗时时间
+有2个交通工具接口的实现接口类，一个出租车Car类，一个地铁DiTie类。
+Car类和DiTie类均包含以下成员：
+private String origin;//起始点
+private String dest;//目标点
+带参构造方法，没有无参构造;
+public void show();//打印起始点和目标点
+编写代码，在测试类中使用带构造创建Car对象和DiTie对象来初始化Traffic交通工具接口对象，调用getName()和getTimer()方法来获取交
+通方式和交通耗时时间，然后使用强制类型转换，把traffic接口对象转成Car对象，调用Car对象的show方法来打印起始点和目标点。
+interface Traffic{
+	public abstract void getName();
+	public abstract String getTimer();
+}
+
+class CarImp extends Object implements Traffic{ 
+	private String origin;
+	private String dest;
+	public CarImp(String origin,String dest){
+		this.origin=origin;
+		this.dest=dest;
+	}
+	
+	public void getName(){
+		System.out.println("car");
+	}
+	
+	public String getTimer(){
+		return "30 min";
+	}
+	
+	public void show(){
+		System.out.println("起始点:"+origin+", 终点:"+dest);
+	}
+}
+
+class DiTieImp extends Object implements Traffic{
+	private String origin;
+	private String dest;
+	public DiTieImp(String origin ,String dest){
+		this.origin=origin;
+		this.dest=dest;
+	}
+	public void getName(){
+		System.out.println("subway");
+	}
+	public String getTimer(){
+		return "10 min";
+	}
+	public void show(){
+		System.out.println("起始点:"+origin+", 终点:"+dest);
+	}
+}
+
+
+class CarAndDiTie{
+	public static void main(String[] args){
+		Traffic traffic = new CarImp("china","england");
+		traffic.getName();
+		traffic.getTimer();
+		CarImp car = (CarImp) traffic;
+		car.show();
+		
+		Traffic traffic2 = new DiTieImp("england","ireland");
+		traffic2.getName();
+		traffic2.getTimer();
+		DiTieImp dt = (DiTieImp) traffic2;
+		dt.show();
+		
+	}
+}
+---------------------------
+接口的综合练习
+1. 给课程中的猫狗会跳舞案例，加入跳高的功能，并在测试类中测试。
+interface Talent{
+	public abstract void jump();
+}
+
+class CatImp extends Object implements Talent{
+	public void jump(){
+		System.out.println("jump 10 feet");
+	}
+	public CatImp(){}
+}
+
+class DogImp extends Object implements Talent{
+	public void jump(){
+		System.out.println("jump 20 feet");
+	}
+	public DogImp(){}
+}
+
+class CatAndDog{
+	public static void main(String[] args){
+		Talent tal = new CatImp();
+		tal.jump();
+		Talent tal2 = new DogImp();
+		tal2.jump();
+	}
+}
