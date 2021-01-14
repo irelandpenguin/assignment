@@ -1,0 +1,98 @@
+面向对象 - 内部类与匿名类
+
+内部类概述与使用
+1. 编写代码，举例验证成员内部类与局部内部类的访问。
+成员内部类和局部内部类都可以访问外部类的成员，包括私有
+局部内部类只能访局部变量的常量
+
+2. 详细描述静态成员内部类的访问特点。
+
+-----------------------------------------
+匿名内部类概述与使用
+1. 有一个抽象类Animal，包含的抽象方法如下：
+publlic abstract  void eat();
+public abstract void sleep();
+public abstract void playGame();
+仿照课程，编写代码，在测试类中显示重写后的抽象方法的内容。
+abstract class Animal{
+	public abstract void eat();
+	public abstract void sleep();
+	public abstract void playGame();
+}
+
+class TestDemo{
+	public static void main(String[] args){
+		Animal an = new Animal(){
+			public void eat(){
+				System.out.println("eating");
+			}
+			public void sleep(){
+				System.out.println("sleeping");
+			}
+			public void playGame("playing games");
+		}
+	}
+}
+
+2. 有一个电脑接口Computer，包含的抽像方法如下：
+public abstract void showName();//显示电脑名称
+public abstract void showLogo();//显示电脑品牌
+void showCPU();//显示电脑CPU型号
+void showMemory();//显示电脑内存大小
+编写代码，在测试类中创建匿名内部类对象，并测试重写后的抽象方法。
+interface Computer{
+	public abstract void showName();
+	public abstract void showLogo();
+	public abstract void showCPU();
+	public abstract void showMemory();
+}
+
+class TestDemo{
+	public static void main(Stirng[] args){
+		Computer computer = new Computer(){
+			public void showName(){
+				System.out.println("irelandpenguin");
+			}
+			public void showLogo(){
+				System.out.println("lenovo");
+			}
+			public void showCPU(){
+				System.out.printlnl("intel");
+			}
+			public void showMemory(){
+				System.out.println("10GB");
+			}
+		}
+	}
+}
+
+3. 内部类面试题：
+	按照要求修改和补齐代码
+		class Outer {
+			public int num = 10;
+			class Inner {
+				public int num = 20;
+				public void show() {
+					int num = 30;
+					System.out.println(?);
+					System.out.println(?);
+					System.out.println(?);
+				}
+			}
+			
+			public void hello() {
+				int num = 40;
+				class Inner2 {
+					public void show() {
+						System.out.println(?);
+					}
+				}
+			}
+		}
+		
+		class InnerClassTest {
+			public static void main(String[] args) {
+					
+			}	
+		}
+	要求最终输出10，20，30，40。
