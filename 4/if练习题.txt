@@ -13,6 +13,23 @@ class Test{
 		}
 	}
 }
+
+
+
+-------
+
+
+public class IfDemo{
+	public static void main(String[] args){
+		int x =10,y=13;
+		if(x>y){
+			System.out.println(x);
+			return;
+		}
+		System.out.println(y);
+		return;
+	}
+}
 2. 已知半径r=2, 求圆的面积sqrt(sqrt＝PI * r *r)。其中PI为自定义的double型变量，值为3.14; 当圆面积大于12时，打印输出当前面积值。
 class Test{
 	public static void main(String[] args){
