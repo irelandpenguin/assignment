@@ -1,0 +1,133 @@
+public clas IfDemo{
+	public static void main(String[] args){
+		int r =2
+		double PI = 3.14F;
+		double square = PI*r*r;
+		if(square>12)}{
+			System.out.println(square);
+			
+		}
+	}
+}
+
+
+public class IfDemo{
+	public static void main(String[] args){
+		int a = 20,b= 12;
+		int tmp ;
+		if(a>b){
+			tmp = a;
+			a =b;
+			b=tmp;
+		}
+		
+	}
+}
+
+import java.util.Scanner;
+public class IfDemo{
+	public static void main(String[] args){
+		Scanner sc =new Scanner(System.in);
+		int a = sc.nextInt();
+		if(a%2==0){
+			System.out.pritnln("偶数");
+			return;
+		}
+		System.out.println("奇数");
+		return;
+	}
+}
+
+int x = 1,y = 1;
+if(x++==2 && ++y==2) {//false
+	x =7;
+}
+System.out.println("x="+x+",y="+y);//x=2,y=1
+int a = 1,b = 1;
+if(a++==1 || ++b==1)
+{
+	a =7;
+}
+System.out.println("a="+a+",b="+b);//a=7,b=1
+
+
+import java.util.Scanner;
+public class IfDemo{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int weight_= sc.nextInt();
+		if(weight_<=1){
+			System.out.println("0.8元");
+			
+		}else if(weight_>1&weight_<=5){
+			System.out.println("3.50元");
+			
+		}else if(weight_>5&weight_<=10){
+			System.out.println("7.00元")；
+		}else if(weight_>10){
+			System.out.println(0.8f*weight_+"元");
+		}
+		return;
+	}
+}
+
+import java.util.Scanner;
+public class ifDemo{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		if(a%9==0&a%6==0&a%3==0){
+			System.out.println(a);
+			return;
+		}
+		System.out.println("你输入的值不符合条件");
+		return;
+	}
+}
+
+import java.util.Scanner;
+public class IfDemo{
+	public static void main(String[] args){
+		Scanner sc = new Scanner();
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int max =a;
+		if(max<b){
+			max=b;
+		}
+		if(max<c){
+			max=c;
+		}
+		System.out.println(max);
+		return;
+	}
+}
+
+
+
+import java.util.Scanner;
+public class IfDemo{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int max =a,min=a;
+		if(max<b){
+			max=b;
+		}
+		
+		if(max<c){
+			max=c;
+		}
+		
+		if(min>b){
+			min=b;
+		}
+		if(min>c){
+			min=c;
+		}
+		System.out.println(min+" "+max);
+	}
+}
