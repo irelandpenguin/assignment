@@ -1,0 +1,138 @@
+public class WhileDemo{
+	public static void main(String[] argsd){
+		int min = 2,sum=0;
+		while(min<=50){
+			sum+=min;
+			min++;
+			
+		}
+		System.out.println(sum);
+	}
+}
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int min =1,sum=0,sum2=0;
+		while(min<=100){
+			if(min%2==0){
+				sum+=min;
+			}else{
+				sum2+=min;
+			}
+			min++;
+		}
+		System.out.println(sum+" "+sum2);
+		return;
+	}
+}
+
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int a =1,result=1;
+		while(a<=8){
+			result*=a;
+			a++;
+		}
+		System.out.println(result);
+		return;
+	}
+}
+
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int a =1;
+		while(a<=100){
+			System.out.print(a);
+			if(a%5==0){
+				System.out.println();
+				
+			}
+		}
+		return;
+	}
+}
+
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int a =1;
+		int sum=0;
+		while(a<=100){
+			if(a%3==0&a%2==0){
+				sum+=a;
+			}
+			
+		}
+		System.out.println(sum);
+		return;
+	}
+}
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int a =100,count=1;
+		while(a<=200){
+			if(a/10%10==3){
+				System.out.print(a+" ");
+				if(count%5==0){
+					System.out.println();
+				}
+				count++;
+			}
+		}
+		return;
+	}
+}
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int a =100;
+		while(a<=600){
+			int ge =a%10;
+			int shi=a/10%10;
+			int bai =a/100;
+			int result =ge*ge*ge+shi*shi*shi+bai*bai*bai;
+			if(result==a){
+				System.out.println(result);
+			}
+		}
+		return;
+	}
+}
+
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int a =50;
+		while(a<=100){
+			if(a%3!=0){
+				a++;
+				continue;
+			}
+			System.out.println(a);
+			a++;
+			
+		}
+		return;
+	}
+}
+
+
+
+public class WhileDemo{
+	public static void main(String[] args){
+		int r =1;
+		double PI  =3.14,line=0.0;
+		while(r<=15){
+			line=r*PI*2;
+			if(line>20){
+				System.out.println(r+" "+line);
+				break;
+			}
+			r++;
+		}
+		return;
+	}
+}

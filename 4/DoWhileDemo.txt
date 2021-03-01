@@ -1,0 +1,90 @@
+public class DowhileDemo{
+	public static void main(String[] args){
+		int a = 2,sum=0;
+		do{
+			sum+=a;
+			a++;
+		}while(a<=50);
+		System.out.println(sum);
+		return;
+	}
+}
+
+
+public class DowhileDemo{
+	public static void main(String[] args){
+		int a =1,result=1;
+		do{
+			result*=a;
+			a++;
+		}while(a<=8);
+		System.out.println(result);
+		return;
+	}
+}
+
+
+public class DoWhileDemo{
+	public static void main(String[] args){
+		int a =1;
+		do{
+			System.out.println(a);
+			if(a%5==0){
+				System.out.println();
+			}
+		}while(a<=100);
+		return;
+	}
+}
+
+
+public class DowhileDemo{
+	public static  void main(String[] args){
+		int a = 100;
+		do{
+			int ge =a%10;
+			int shi=a/10%10;
+			int bai =a/100;
+			int result =ge*ge*ge+shi*shi*shi+bai*bai*bai;
+			if(result==a){
+				System.out.println(result);
+			}
+			
+		}while(a<=600);
+		return;
+	}
+}
+
+public class DoWhileDemo{
+	public static void main(String[] args){
+		int a =3;
+		do{
+			if(a%3!=0){
+				a++;
+				continue;
+				
+			}
+			System.out.println(a);
+			a++;
+		}while(a<=100);
+		return;
+	}
+}
+
+
+public class DoWhileDemo{
+	public static void main(String[] args){
+		int r =1;
+		double PI = 3.14;
+		double line =0.0;
+		do{
+			line=r*2*PI;
+			if(line>20){
+				System.out.println(r+" "+line);
+				break;
+			}
+			r++;
+		}while(r<=20);
+		return;
+	}
+}
